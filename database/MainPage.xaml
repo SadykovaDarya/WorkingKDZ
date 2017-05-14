@@ -1,0 +1,24 @@
+﻿<Page x:Class="database.MainPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:database"
+      mc:Ignorable="d" 
+      d:DesignHeight="412.778" d:DesignWidth="827.004"
+      Title="MainPage">
+
+    <Grid Unloaded="Grid_Unloaded">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="7*"/>
+            <RowDefinition Height="3*"/>
+        </Grid.RowDefinitions>
+        <Button x:Name="Add" Content="Create" HorizontalAlignment="Left" Margin="28,191,0,0" VerticalAlignment="Top" Width="75" Click="Add_Click" Grid.RowSpan="2"/>
+        <Button x:Name="delete" Content="Delete" HorizontalAlignment="Left" Margin="138,17,0,0" VerticalAlignment="Top" Width="75" RenderTransformOrigin="0.011,0.754" Click="delete_Click" Grid.Row="1"/>
+        <Button x:Name="change" Content="Change" HorizontalAlignment="Left" Margin="28,17.377,0,0" VerticalAlignment="Top" Width="75" Grid.Row="1" Click="change_Click"/>
+        <Button x:Name="search" Content="Search" HorizontalAlignment="Left" Margin="138,191,0,0" VerticalAlignment="Top" Width="75" Click="search_Click" Grid.RowSpan="2"/>
+        <ListBox x:Name="characters" HorizontalAlignment="Left" Height="134" Margin="28,35,0,0" VerticalAlignment="Top" Width="661" SelectionChanged="characters_SelectionChanged"/>
+        <Button x:Name="BackToWelcome_button" Content="Back" HorizontalAlignment="Left" Margin="28,60.377,0,0" VerticalAlignment="Top" Width="75" Click="BackToWelcome_button_Click" Grid.Row="1"/>
+
+    </Grid>
+</Page>

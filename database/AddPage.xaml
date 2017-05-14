@@ -1,0 +1,58 @@
+﻿<Page x:Class="database.AddPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:database"
+      mc:Ignorable="d" 
+      d:DesignHeight="330.126" d:DesignWidth="522.176"
+      Title="AddPage">
+    <Page.Resources>
+        <Style x:Key="placeHolder" TargetType="{x:Type TextBox}" BasedOn="{StaticResource {x:Type TextBox}}">
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type TextBox}">
+                        <Grid>
+                            <TextBox Text="{Binding Path=Text, 
+RelativeSource={RelativeSource TemplatedParent}, 
+Mode=TwoWay, 
+UpdateSourceTrigger=PropertyChanged}" 
+x:Name="textSource" 
+Background="Transparent" 
+Panel.ZIndex="2" />
+                            <TextBox Text="{TemplateBinding Tag}" Background="{TemplateBinding Background}" Panel.ZIndex="1">
+                                <TextBox.Style>
+                                    <Style TargetType="{x:Type TextBox}">
+                                        <Setter Property="Foreground" Value="Transparent"/>
+                                        <Style.Triggers>
+                                            <DataTrigger Binding="{Binding Path=Text, Source={x:Reference textSource}}" Value="">
+                                                <Setter Property="Foreground" Value="LightGray"/>
+                                            </DataTrigger>
+                                        </Style.Triggers>
+                                    </Style>
+                                </TextBox.Style>
+                            </TextBox>
+                        </Grid>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+    </Page.Resources>
+
+    <Grid Unloaded="Grid_Unloaded">
+        <TextBox x:Name="nameBox" Style="{StaticResource placeHolder}" Tag="Name" HorizontalAlignment="Left" Height="23" Margin="29,28,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <ComboBox x:Name="raceBox" HorizontalAlignment="Left" Margin="29,75,0,0" VerticalAlignment="Top" Width="120"/>
+        <ComboBox x:Name="natureBox" HorizontalAlignment="Left" Margin="29,122,0,0" VerticalAlignment="Top" Width="120"/>
+        <ComboBox x:Name="alignmentBox" HorizontalAlignment="Left" Margin="29,160,0,0" VerticalAlignment="Top" Width="120"/>
+        <Button x:Name="Add" Content="Add" HorizontalAlignment="Left" Margin="29,213,0,0" VerticalAlignment="Top" Width="75" Click="Add_Click"/>
+        <Label x:Name="label_error" Content="" HorizontalAlignment="Left" Margin="77,274,0,0" VerticalAlignment="Top" Width="415"/>
+        <Button x:Name="BackToMain_button" Content="Back" HorizontalAlignment="Left" Margin="29,249,0,0" VerticalAlignment="Top" Width="75" Click="BackToMain_button_Click"/>
+        <TextBox x:Name="Strength" Style="{StaticResource placeHolder}" Tag="Strength" HorizontalAlignment="Left" Height="23" Margin="209,33,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="81"/>
+        <TextBox x:Name="Constitution" Style="{StaticResource placeHolder}" Tag="Constitution" HorizontalAlignment="Left" Height="23" Margin="209,61,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="81"/>
+        <TextBox x:Name="Dexterity" Style="{StaticResource placeHolder}" Tag="Dexterity" HorizontalAlignment="Left" Height="23" Margin="209,89,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="81"/>
+        <TextBox x:Name="Intelligence" Style="{StaticResource placeHolder}" Tag="Intelligence" HorizontalAlignment="Left" Height="23" Margin="295,33,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="83"/>
+        <TextBox x:Name="Wisdom" Style="{StaticResource placeHolder}" Tag="Wisdom" HorizontalAlignment="Left" Height="23" Margin="295,61,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="83"/>
+        <TextBox x:Name="Charisma" Style="{StaticResource placeHolder}" Tag="Charisma" HorizontalAlignment="Left" Height="23" Margin="295,89,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="83"/>
+
+    </Grid>
+</Page>

@@ -1,0 +1,19 @@
+﻿<Page x:Class="database.LoginPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:database"
+      mc:Ignorable="d" 
+      d:DesignHeight="440" d:DesignWidth="765.714"
+      Title="LoginPage">
+
+    <Grid Unloaded="Grid_Unloaded">
+        <Button x:Name="login_button" Content="Login" HorizontalAlignment="Left" Margin="10,137,0,0" VerticalAlignment="Top" Width="135" Height="46" Click="login_button_Click"/>
+        <Button x:Name="nologin_button" Content="Continue" HorizontalAlignment="Left" Margin="312,137,0,0" VerticalAlignment="Top" Width="136" Height="46" Click="nologin_button_Click"/>
+        <Label x:Name="label" Content="To get access to your characters' database you have to log in or create an account.&#xD;&#xA;By choosing to continue without logging in you are aware of the fact that &#xD;&#xA;none of the data you entered are going to be remembered after closing a program." HorizontalAlignment="Left" Margin="10,49,0,0" VerticalAlignment="Top" Height="116" Width="469"/>
+        <Button x:Name="newaccount_button" Content="Create an account" HorizontalAlignment="Left" Margin="171,137,0,0" VerticalAlignment="Top" Width="117" Height="46" Click="newaccount_button_Click"/>
+        <Button x:Name="Rules_button" Content="Rules" HorizontalAlignment="Left" Margin="171,213,0,0" VerticalAlignment="Top" Width="117" Height="29"/>
+
+    </Grid>
+</Page>

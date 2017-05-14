@@ -1,0 +1,53 @@
+﻿<Page x:Class="database.SearchPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:database"
+      mc:Ignorable="d" 
+      d:DesignHeight="301.195" d:DesignWidth="594.024"
+      Title="SearchPage">
+    <Page.Resources>
+        <Style x:Key="placeHolder" TargetType="{x:Type TextBox}" BasedOn="{StaticResource {x:Type TextBox}}">
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type TextBox}">
+                        <Grid>
+                            <TextBox Text="{Binding Path=Text, 
+RelativeSource={RelativeSource TemplatedParent}, 
+Mode=TwoWay, 
+UpdateSourceTrigger=PropertyChanged}" 
+x:Name="textSource" 
+Background="Transparent" 
+Panel.ZIndex="2" />
+                            <TextBox Text="{TemplateBinding Tag}" Background="{TemplateBinding Background}" Panel.ZIndex="1">
+                                <TextBox.Style>
+                                    <Style TargetType="{x:Type TextBox}">
+                                        <Setter Property="Foreground" Value="Transparent"/>
+                                        <Style.Triggers>
+                                            <DataTrigger Binding="{Binding Path=Text, Source={x:Reference textSource}}" Value="">
+                                                <Setter Property="Foreground" Value="LightGray"/>
+                                            </DataTrigger>
+                                        </Style.Triggers>
+                                    </Style>
+                                </TextBox.Style>
+                            </TextBox>
+                        </Grid>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+    </Page.Resources>
+
+    <Grid Unloaded="Grid_Unloaded">
+        <TextBox x:Name="nameBox" Style="{StaticResource placeHolder}" Tag="Name" HorizontalAlignment="Left" Height="23" Margin="21,47,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="120"/>
+        <ComboBox x:Name="raceBox" HorizontalAlignment="Left" Margin="21,80,0,0" VerticalAlignment="Top" Width="120"/>
+        <ComboBox x:Name="natureBox" HorizontalAlignment="Left" Margin="21,117,0,0" VerticalAlignment="Top" Width="120"/>
+        <ComboBox x:Name="alignmentBox" HorizontalAlignment="Left" Margin="21,159,0,0" VerticalAlignment="Top" Width="120"/>
+        <Button x:Name="button_Find" Content="Find" HorizontalAlignment="Left" Margin="21,197,0,0" VerticalAlignment="Top" Width="75" Click="button_Find_Click"/>
+        <Label x:Name="label" Content="Describe a character you want to find" HorizontalAlignment="Left" Margin="21,10,0,0" VerticalAlignment="Top" Width="207"/>
+        <Button x:Name="BackToMain_button" Content="Back" HorizontalAlignment="Left" Margin="21,236,0,0" VerticalAlignment="Top" Width="75" RenderTransformOrigin="-0.125,1.385" Click="BackToMain_button_Click"/>
+        <ListBox x:Name="SearchResults_listBox" HorizontalAlignment="Left" Height="124" Margin="226,47,0,0" VerticalAlignment="Top" Width="305" Visibility="Hidden"/>
+
+    </Grid>
+</Page>
