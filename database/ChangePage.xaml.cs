@@ -28,14 +28,14 @@ namespace database
             natureBox.ItemsSource = Data.nature;
             alignmentBox.ItemsSource = Data.alignment;
 
-            nameBox.Text = Data.characters[index-1].Name;
-            raceBox.Text = Data.characters[index - 1].Race;
-            natureBox.Text = Data.characters[index - 1].Nature;
-            alignmentBox.Text = Data.characters[index - 1].Alighnment;
+            nameBox.Text = Data.characters[index].Name;
+            raceBox.Text = Data.characters[index].Race;
+            natureBox.Text = Data.characters[index].Nature;
+            alignmentBox.Text = Data.characters[index].Alighnment;
             List<TextBox> stats = new List<TextBox> { Strength, Constitution, Dexterity, Intelligence, Wisdom, Charisma };
             for (int i = 0; i < 6; i++)
             {
-                stats[i].Text = Data.characters[index - 1].Stats[i].ToString();
+                stats[i].Text = Data.characters[index].Stats[i].ToString();
             }
             this.index = index;
         }
@@ -61,13 +61,13 @@ namespace database
             else if (k > 0) { label_error.Content = "Error occured! Characteristics have to be numerical and no more than 22."; }
             else
             {
-                Data.characters[index - 1].Name = nameBox.Text;
-                Data.characters[index - 1].Race = raceBox.Text;
-                Data.characters[index - 1].Nature = natureBox.Text;
-                Data.characters[index - 1].Alighnment = alignmentBox.Text;
+                Data.characters[index].Name = nameBox.Text;
+                Data.characters[index].Race = raceBox.Text;
+                Data.characters[index].Nature = natureBox.Text;
+                Data.characters[index].Alighnment = alignmentBox.Text;
                 for (int i = 0; i < 6; i++)
                 {
-                    Data.characters[index - 1].Stats[i] = int.Parse(stats[i].Text);
+                    Data.characters[index].Stats[i] = int.Parse(stats[i].Text);
                 }
             }
         }

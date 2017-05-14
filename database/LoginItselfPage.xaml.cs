@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
@@ -36,14 +37,16 @@ namespace database
 
         private void button_Click(object sender, RoutedEventArgs e)
         {
+            MD5 md5 = MD5.Create();
+            byte[] hash = md5.ComputeHash(Encoding.ASCII.GetBytes(password_textBox.Text));
+            string h = Convert.ToBase64String(hash);
 
 
             for (int i = 0; i < Data.players.Count; i++)
             {
-
             
             
-                if (login_textBox.Text == Data.players[i].Login && password_textBox.Text == Data.players[i].Password)
+                if (login_textBox.Text == Data.players[i].Login && h == Data.players[i].Password)
                 {
                     Data.number = i;
                     NavigationService nav;
@@ -59,12 +62,19 @@ namespace database
 
         private void newplayer_button_Click(object sender, RoutedEventArgs e)
         {
-            Data.mark = false;  
-            Data.players.Add(new Player(login_textBox.Text, password_textBox.Text));
-            NavigationService nav;
-            LoginPage CP = new LoginPage();
-            nav = NavigationService.GetNavigationService(this);
-            nav.Navigate(CP);
+            Data.mark = false;
+            if (login_textBox .Text!= "" && password_textBox .Text!= "")
+            {
+                MD5 md5 = MD5.Create();
+                byte[] hash = md5.ComputeHash(Encoding.ASCII.GetBytes(password_textBox.Text));
+                string h = Convert.ToBase64String(hash);
+                Data.players.Add(new Player(login_textBox.Text, h));
+                NavigationService nav;
+                LoginPage CP = new LoginPage();
+                nav = NavigationService.GetNavigationService(this);
+                nav.Navigate(CP);
+            }
+            else error_label.Content = "Error occured! All fields must be filled.";
         }
 
         private void Grid_Unloaded(object sender, RoutedEventArgs e)

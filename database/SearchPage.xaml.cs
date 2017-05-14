@@ -32,7 +32,6 @@ namespace database
         {
             SearchResults_listBox.Items.Clear();
             SearchResults_listBox.Visibility = Visibility.Visible;
-            SearchResults_listBox.Items.Add("Name-Race-Nature-Alighnment");
             foreach (var hero in Data.characters)
                 {
                     if ((nameBox.Text==hero.Name|| nameBox.Text == "")&&(raceBox.Text == hero.Race || raceBox.Text == "") &&(natureBox.Text == hero.Nature || natureBox.Text == "") && (alignmentBox.Text == hero.Alighnment || alignmentBox.Text == ""))

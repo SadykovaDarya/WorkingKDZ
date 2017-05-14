@@ -21,19 +21,21 @@ namespace database
     public partial class MainPage : Page
     {
         public MainPage(int number)
-        {
+        {   
             InitializeComponent();
             Data.characters.Clear();
             characters.Items.Clear();
-            characters.Items.Add("Name-Race-Nature-Alighnment-Str-Con-Dex-Int-Wis-Cha");
-            foreach (var item in Data.players[number].Characters)
+            try
             {
-                Data.characters.Add(item);
-            }
-            foreach (var hero in Data.characters)
-            {
-                characters.Items.Add(hero.Info);
-            }
+                foreach (var item in Data.players[number].Characters)
+                {
+                    Data.characters.Add(item);
+                }
+                foreach (var hero in Data.characters)
+                {
+                    characters.Items.Add(hero.Info);
+                }
+            } catch { characters.ItemsSource = null; }
         }
 
         private void characters_SelectionChanged(object sender, SelectionChangedEventArgs e)

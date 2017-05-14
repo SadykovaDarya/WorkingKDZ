@@ -32,6 +32,7 @@ namespace database
             MainPage CP = new MainPage(Data.number);
             nav = NavigationService.GetNavigationService(this);
             nav.Navigate(CP);
+            
         }
 
         private void login_button_Click(object sender, RoutedEventArgs e)
