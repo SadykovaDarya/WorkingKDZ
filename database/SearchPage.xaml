@@ -46,8 +46,37 @@ Panel.ZIndex="2" />
         <ComboBox x:Name="alignmentBox" HorizontalAlignment="Left" Margin="21,159,0,0" VerticalAlignment="Top" Width="120"/>
         <Button x:Name="button_Find" Content="Find" HorizontalAlignment="Left" Margin="21,197,0,0" VerticalAlignment="Top" Width="75" Click="button_Find_Click"/>
         <Label x:Name="label" Content="Describe a character you want to find" HorizontalAlignment="Left" Margin="21,10,0,0" VerticalAlignment="Top" Width="207"/>
-        <Button x:Name="BackToMain_button" Content="Back" HorizontalAlignment="Left" Margin="21,236,0,0" VerticalAlignment="Top" Width="75" RenderTransformOrigin="-0.125,1.385" Click="BackToMain_button_Click"/>
-        <ListBox x:Name="SearchResults_listBox" HorizontalAlignment="Left" Height="124" Margin="226,47,0,0" VerticalAlignment="Top" Width="305" Visibility="Hidden"/>
+        <Button x:Name="BackToMain_button" Content="Back" HorizontalAlignment="Stretch" Margin="21,236,0,0" VerticalAlignment="Top" Width="75" RenderTransformOrigin="-0.125,1.385" Click="BackToMain_button_Click"/>
+        <ListBox x:Name="SearchResults_listBox" HorizontalAlignment="Left" Height="124" Margin="180,41,0,0" VerticalAlignment="Top" Width="600" Visibility="Hidden">
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="80"/>
+                            <ColumnDefinition Width="80"/>
+                            <ColumnDefinition Width="80"/>
+                            <ColumnDefinition Width="100"/>
+                            <ColumnDefinition Width="40"/>
+                            <ColumnDefinition Width="40"/>
+                            <ColumnDefinition Width="40"/>
+                            <ColumnDefinition Width="40"/>
+                            <ColumnDefinition Width="40"/>
+                            <ColumnDefinition Width="40"/>
+                        </Grid.ColumnDefinitions>
+                        <TextBlock Text="{Binding Name}"></TextBlock>
+                        <TextBlock Grid.Column="1" Text="{Binding Race}"></TextBlock>
+                        <TextBlock Grid.Column="2" Text="{Binding Nature}"></TextBlock>
+                        <TextBlock Grid.Column="3" Text="{Binding Alignment}"></TextBlock>
+                        <TextBlock Grid.Column="4" Text="{Binding Stats[0]}"></TextBlock>
+                        <TextBlock Grid.Column="5" Text="{Binding Stats[1]}"></TextBlock>
+                        <TextBlock Grid.Column="6" Text="{Binding Stats[2]}"></TextBlock>
+                        <TextBlock Grid.Column="7" Text="{Binding Stats[3]}"></TextBlock>
+                        <TextBlock Grid.Column="8" Text="{Binding Stats[4]}"></TextBlock>
+                        <TextBlock Grid.Column="9" Text="{Binding Stats[5]}"></TextBlock>
+                    </Grid>
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+        </ListBox>
 
     </Grid>
 </Page>

@@ -14,11 +14,42 @@
             <RowDefinition Height="3*"/>
         </Grid.RowDefinitions>
         <Button x:Name="Add" Content="Create" HorizontalAlignment="Left" Margin="28,191,0,0" VerticalAlignment="Top" Width="75" Click="Add_Click" Grid.RowSpan="2"/>
-        <Button x:Name="delete" Content="Delete" HorizontalAlignment="Left" Margin="138,17,0,0" VerticalAlignment="Top" Width="75" RenderTransformOrigin="0.011,0.754" Click="delete_Click" Grid.Row="1"/>
-        <Button x:Name="change" Content="Change" HorizontalAlignment="Left" Margin="28,17.377,0,0" VerticalAlignment="Top" Width="75" Grid.Row="1" Click="change_Click"/>
-        <Button x:Name="search" Content="Search" HorizontalAlignment="Left" Margin="138,191,0,0" VerticalAlignment="Top" Width="75" Click="search_Click" Grid.RowSpan="2"/>
-        <ListBox x:Name="characters" HorizontalAlignment="Left" Height="134" Margin="28,35,0,0" VerticalAlignment="Top" Width="661" SelectionChanged="characters_SelectionChanged"/>
-        <Button x:Name="BackToWelcome_button" Content="Back" HorizontalAlignment="Left" Margin="28,60.377,0,0" VerticalAlignment="Top" Width="75" Click="BackToWelcome_button_Click" Grid.Row="1"/>
+        <Button x:Name="delete" Content="Delete" HorizontalAlignment="Left" Margin="138,238,0,0" VerticalAlignment="Top" Width="75" RenderTransformOrigin="0.011,0.754" Click="delete_Click"/>
+        <Button x:Name="change" Content="Change" HorizontalAlignment="Left" Margin="28,238,0,0" VerticalAlignment="Top" Width="75" Click="change_Click"/>
+        <Button x:Name="search" Content="Search" HorizontalAlignment="Left" Margin="138,191,0,0" VerticalAlignment="Top" Width="75" Click="search_Click" Grid.RowSpan="2" HorizontalContentAlignment="Stretch"/>
+        <ListBox x:Name="characters" HorizontalAlignment="Left" Height="134" Margin="28,29,0,0" VerticalAlignment="Top" Width="600">
+            <ListBox.ItemTemplate >
+                <DataTemplate>
+                    <Grid>
+                        <Grid.ColumnDefinitions >
+                            <ColumnDefinition Width="80"/>
+                            <ColumnDefinition Width="80"/>
+                            <ColumnDefinition Width="80"/>
+                            <ColumnDefinition Width="100"/>
+                            <ColumnDefinition Width="40"/>
+                            <ColumnDefinition Width="40"/>
+                            <ColumnDefinition Width="40"/>
+                            <ColumnDefinition Width="40"/>
+                            <ColumnDefinition Width="40"/>
+                            <ColumnDefinition Width="40"/>
+                        </Grid.ColumnDefinitions>
+                        <TextBlock Text="{Binding Name}"></TextBlock>
+                        <TextBlock Grid.Column="1" Text="{Binding Race}"></TextBlock>
+                        <TextBlock Grid.Column="2" Text="{Binding Nature}"></TextBlock>
+                        <TextBlock Grid.Column="3" Text="{Binding Alignment}"></TextBlock>
+                        <TextBlock Grid.Column="4" Text="{Binding Stats[0]}"></TextBlock>
+                        <TextBlock Grid.Column="5" Text="{Binding Stats[1]}"></TextBlock>
+                        <TextBlock Grid.Column="6" Text="{Binding Stats[2]}"></TextBlock>
+                        <TextBlock Grid.Column="7" Text="{Binding Stats[3]}"></TextBlock>
+                        <TextBlock Grid.Column="8" Text="{Binding Stats[4]}"></TextBlock>
+                        <TextBlock Grid.Column="9" Text="{Binding Stats[5]}"></TextBlock>
+                    </Grid>
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+        </ListBox>
+
+
+        <Button x:Name="BackToWelcome_button" Content="Back" HorizontalAlignment="Left" Margin="28,10,0,0" VerticalAlignment="Top" Width="75" Click="BackToWelcome_button_Click" Grid.Row="1"/>
 
     </Grid>
 </Page>

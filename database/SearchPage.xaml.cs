@@ -35,9 +35,9 @@ namespace database
             Logger.Instance.Log("The search has been initiated.");
             foreach (var hero in Data.characters)
                 {
-                    if ((nameBox.Text==hero.Name|| nameBox.Text == "")&&(raceBox.Text == hero.Race || raceBox.Text == "") &&(natureBox.Text == hero.Nature || natureBox.Text == "") && (alignmentBox.Text == hero.Alighnment || alignmentBox.Text == ""))
+                    if ((nameBox.Text==hero.Name|| nameBox.Text == "")&&(raceBox.Text == hero.Race || raceBox.Text == "") &&(natureBox.Text == hero.Nature || natureBox.Text == "") && (alignmentBox.Text == hero.Alignment || alignmentBox.Text == ""))
                     {
-                    SearchResults_listBox.Items.Add(hero.Info);
+                    SearchResults_listBox.Items.Add(hero);
                     }
                 }
             

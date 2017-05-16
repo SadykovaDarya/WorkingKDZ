@@ -61,7 +61,7 @@ namespace database
         }
 
         private void BackToMain_button_Click(object sender, RoutedEventArgs e)
-        {
+        {   
             NavigationService nav;
             MainPage CP = new MainPage(Data.number);
             nav = NavigationService.GetNavigationService(this);

@@ -30,7 +30,7 @@ namespace database
         }
 
         private string _alignment;
-        public string Alighnment
+        public string Alignment
         {
             get { return _alignment; }
             set { _alignment = value; }

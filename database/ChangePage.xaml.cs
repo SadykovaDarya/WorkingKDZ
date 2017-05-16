@@ -31,7 +31,7 @@ namespace database
             nameBox.Text = Data.characters[index].Name;
             raceBox.Text = Data.characters[index].Race;
             natureBox.Text = Data.characters[index].Nature;
-            alignmentBox.Text = Data.characters[index].Alighnment;
+            alignmentBox.Text = Data.characters[index].Alignment;
             List<TextBox> stats = new List<TextBox> { Strength, Constitution, Dexterity, Intelligence, Wisdom, Charisma };
             for (int i = 0; i < 6; i++)
             {
@@ -65,7 +65,7 @@ namespace database
                 Data.characters[index].Name = nameBox.Text;
                 Data.characters[index].Race = raceBox.Text;
                 Data.characters[index].Nature = natureBox.Text;
-                Data.characters[index].Alighnment = alignmentBox.Text;
+                Data.characters[index].Alignment = alignmentBox.Text;
                 for (int i = 0; i < 6; i++)
                 {
                     Data.characters[index].Stats[i] = int.Parse(stats[i].Text);

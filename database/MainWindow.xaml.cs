@@ -23,6 +23,7 @@ namespace database
         public MainWindow()
         {
             InitializeComponent();
+            FrameName.NavigationService.Navigate(new Uri("LoginPage.xaml", UriKind.Relative));
         }
     }
 }

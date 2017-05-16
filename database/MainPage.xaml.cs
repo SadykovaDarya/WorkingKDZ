@@ -21,25 +21,30 @@ namespace database
     public partial class MainPage : Page
     {
         public MainPage(int number)
-        {   
+        {
             InitializeComponent();
             Data.characters.Clear();
             characters.Items.Clear();
-            try
-            {
-                foreach (var item in Data.players[number].Characters)
+            
+                try
                 {
-                    Data.characters.Add(item);
+                    foreach (var item in Data.players[number].Characters)
+                    {
+                        Data.characters.Add(item);
+                    }
+                    characters.ItemsSource = Data.characters;
                 }
-                foreach (var hero in Data.characters)
-                {
-                    characters.Items.Add(hero.Info);
-                }
-            } catch { characters.ItemsSource = null; }
-        }
+                catch { characters.ItemsSource = null; }
+            }
 
-        private void characters_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        public MainPage(string s)
         {
+            InitializeComponent();
+            characters.ItemsSource = Data.iconic;
+            search.Visibility = Visibility.Hidden;
+            delete.Visibility = Visibility.Hidden;
+            Add.Visibility = Visibility.Hidden;
+            change.Visibility = Visibility.Hidden;
 
         }
 
@@ -61,6 +66,7 @@ namespace database
 
         private void BackToWelcome_button_Click(object sender, RoutedEventArgs e)
         {
+            
             NavigationService nav;
             LoginPage CP = new LoginPage();
             nav = NavigationService.GetNavigationService(this);

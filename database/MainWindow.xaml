@@ -5,9 +5,12 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:database"
         mc:Ignorable="d"
-        Title="MainWindow" Height="350" Width="525">
+        Title="MainWindow" Height="434.134" Width="811.058">
     <Grid>
-        <ListBox x:Name="stats_listBox" HorizontalAlignment="Left" Height="131" Margin="59,53,0,0" VerticalAlignment="Top" Width="358"/>
+        <Frame 
+            Source= "MainWindow.xaml"
+            Name="FrameName" NavigationUIVisibility="Hidden">
+        </Frame>
 
     </Grid>
 </Window>

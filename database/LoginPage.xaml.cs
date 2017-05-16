@@ -23,14 +23,16 @@ namespace database
         public LoginPage()
         {
             InitializeComponent();
+            
             Data.Download();
         }
 
         private void nologin_button_Click(object sender, RoutedEventArgs e)
         {
             Logger.Instance.Log("Unauthorised user has appeared.");
+            string s = null;
             NavigationService nav;
-            MainPage CP = new MainPage(Data.number);
+            MainPage CP = new MainPage(s);
             nav = NavigationService.GetNavigationService(this);
             nav.Navigate(CP);
             

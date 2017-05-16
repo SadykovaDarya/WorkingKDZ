@@ -8,7 +8,6 @@ namespace database
 { [Serializable]
     public class Player
     {
-
         private string _login;
         public string Login
         {
