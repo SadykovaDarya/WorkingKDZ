@@ -71,6 +71,7 @@ namespace database
         {
             if (characters.SelectedItem != null)
             {
+                Logger.Instance.Log("The character has been deleted.");
                 Data.characters.RemoveAt(characters.SelectedIndex);
                 Data.players[Data.number].Characters.RemoveAt(characters.SelectedIndex);
                 characters.Items.RemoveAt(characters.SelectedIndex);

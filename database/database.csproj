@@ -62,6 +62,7 @@
       <DependentUpon>ChangePage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Data.cs" />
+    <Compile Include="Logger.cs" />
     <Compile Include="LoginItselfPage.xaml.cs">
       <DependentUpon>LoginItselfPage.xaml</DependentUpon>
     </Compile>

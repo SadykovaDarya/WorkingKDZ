@@ -28,6 +28,7 @@ namespace database
 
         private void nologin_button_Click(object sender, RoutedEventArgs e)
         {
+            Logger.Instance.Log("Unauthorised user has appeared.");
             NavigationService nav;
             MainPage CP = new MainPage(Data.number);
             nav = NavigationService.GetNavigationService(this);

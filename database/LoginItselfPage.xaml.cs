@@ -25,6 +25,8 @@ namespace database
         {
             InitializeComponent();
             
+
+
         }
 
         private void BackToLogin_button_Click(object sender, RoutedEventArgs e)
@@ -48,6 +50,7 @@ namespace database
             
                 if (login_textBox.Text == Data.players[i].Login && h == Data.players[i].Password)
                 {
+                    Logger.Instance.Log("User has authorised.");
                     Data.number = i;
                     NavigationService nav;
                     MainPage CP = new MainPage(Data.number);
@@ -56,15 +59,16 @@ namespace database
                     goto shit;
                 }
             }
-            { error_label.Content = "Error occured! Wrong password or login."; login_textBox.Text = ""; password_textBox.Text = ""; }
+            { error_label.Content = "Error occured! Wrong password or login."; login_textBox.Text = ""; password_textBox.Text = ""; Logger.Instance.Log("Failed attempt to log in."); }
         shit:;
         }
 
         private void newplayer_button_Click(object sender, RoutedEventArgs e)
         {
             Data.mark = false;
-            if (login_textBox .Text!= "" && password_textBox .Text!= "")
+            if (login_textBox.Text != "" && password_textBox.Text != "")
             {
+                Logger.Instance.Log("New account was created.");
                 MD5 md5 = MD5.Create();
                 byte[] hash = md5.ComputeHash(Encoding.ASCII.GetBytes(password_textBox.Text));
                 string h = Convert.ToBase64String(hash);
@@ -74,7 +78,7 @@ namespace database
                 nav = NavigationService.GetNavigationService(this);
                 nav.Navigate(CP);
             }
-            else error_label.Content = "Error occured! All fields must be filled.";
+            else { error_label.Content = "Error occured! All fields must be filled."; Logger.Instance.Log("Failed attempt to crate new account."); }
         }
 
         private void Grid_Unloaded(object sender, RoutedEventArgs e)

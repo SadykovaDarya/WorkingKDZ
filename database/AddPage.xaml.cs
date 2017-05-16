@@ -40,7 +40,8 @@ namespace database
             else if (nameBox.Text == "") { label_error.Content = "Error occured! Type name."; }
             else if (k>0 ) { label_error.Content = "Error occured! Characteristics have to be numerical and no more than 22."; }
             else
-            { 
+            {
+                Logger.Instance.Log("New character has been added.");
                 for (int i = 0; i < stats.Count; i++)
                 {
                     Data.stats[i] = int.Parse(stats[i].Text);

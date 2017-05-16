@@ -61,6 +61,7 @@ namespace database
             else if (k > 0) { label_error.Content = "Error occured! Characteristics have to be numerical and no more than 22."; }
             else
             {
+                Logger.Instance.Log("Character has been changed.");
                 Data.characters[index].Name = nameBox.Text;
                 Data.characters[index].Race = raceBox.Text;
                 Data.characters[index].Nature = natureBox.Text;
