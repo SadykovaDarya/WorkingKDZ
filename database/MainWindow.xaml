@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:database"
         mc:Ignorable="d"
-        Title="MainWindow" Height="434.134" Width="811.058">
+        Title="DnD base" Height="434.134" Width="811.058" ResizeMode="NoResize" Icon="Images\logo.png">
     <Grid>
         <Frame 
             Source= "MainWindow.xaml"

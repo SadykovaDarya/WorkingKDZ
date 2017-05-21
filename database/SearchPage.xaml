@@ -5,8 +5,11 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:database"
       mc:Ignorable="d" 
-      d:DesignHeight="301.195" d:DesignWidth="594.024"
+      d:DesignHeight="363.5" d:DesignWidth="785.214"
       Title="SearchPage">
+    <Page.Background>
+        <ImageBrush ImageSource="Images\dicered.png" Stretch="UniformToFill"/>
+    </Page.Background>
     <Page.Resources>
         <Style x:Key="placeHolder" TargetType="{x:Type TextBox}" BasedOn="{StaticResource {x:Type TextBox}}">
             <Setter Property="Template">
@@ -41,12 +44,20 @@ Panel.ZIndex="2" />
 
     <Grid Unloaded="Grid_Unloaded">
         <TextBox x:Name="nameBox" Style="{StaticResource placeHolder}" Tag="Name" HorizontalAlignment="Left" Height="23" Margin="21,47,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="120"/>
-        <ComboBox x:Name="raceBox" HorizontalAlignment="Left" Margin="21,80,0,0" VerticalAlignment="Top" Width="120"/>
-        <ComboBox x:Name="natureBox" HorizontalAlignment="Left" Margin="21,117,0,0" VerticalAlignment="Top" Width="120"/>
-        <ComboBox x:Name="alignmentBox" HorizontalAlignment="Left" Margin="21,159,0,0" VerticalAlignment="Top" Width="120"/>
-        <Button x:Name="button_Find" Content="Find" HorizontalAlignment="Left" Margin="21,197,0,0" VerticalAlignment="Top" Width="75" Click="button_Find_Click"/>
+        <ComboBox x:Name="raceBox" HorizontalAlignment="Left" Margin="21,80,0,0" VerticalAlignment="Top" Width="120" SelectionChanged="raceBox_SelectionChanged"/>
+        <ComboBox x:Name="natureBox" HorizontalAlignment="Left" Margin="21,120,0,0" VerticalAlignment="Top" Width="120" SelectionChanged="natureBox_SelectionChanged"/>
+        <ComboBox x:Name="alignmentBox" HorizontalAlignment="Left" Margin="21,159,0,0" VerticalAlignment="Top" Width="120" SelectionChanged="alignmentBox_SelectionChanged"/>
+        <Button x:Name="button_Find" Content="Find" HorizontalAlignment="Left" Margin="21,197,0,0" VerticalAlignment="Top" Width="75" Click="button_Find_Click" BorderThickness="0" FontSize="14" FontWeight="Bold">
+            <Button.Background>
+                <ImageBrush/>
+            </Button.Background>
+        </Button>
         <Label x:Name="label" Content="Describe a character you want to find" HorizontalAlignment="Left" Margin="21,10,0,0" VerticalAlignment="Top" Width="207"/>
-        <Button x:Name="BackToMain_button" Content="Back" HorizontalAlignment="Stretch" Margin="21,236,0,0" VerticalAlignment="Top" Width="75" RenderTransformOrigin="-0.125,1.385" Click="BackToMain_button_Click"/>
+        <Button x:Name="BackToMain_button" Content="Back" HorizontalAlignment="Stretch" Margin="20,239,690,0" VerticalAlignment="Top" Width="75" RenderTransformOrigin="-0.125,1.385" Click="BackToMain_button_Click" FontSize="14" FontWeight="Bold" BorderThickness="0">
+            <Button.Background>
+                <ImageBrush/>
+            </Button.Background>
+        </Button>
         <ListBox x:Name="SearchResults_listBox" HorizontalAlignment="Left" Height="124" Margin="180,41,0,0" VerticalAlignment="Top" Width="600" Visibility="Hidden">
             <ListBox.ItemTemplate>
                 <DataTemplate>
@@ -77,6 +88,9 @@ Panel.ZIndex="2" />
                 </DataTemplate>
             </ListBox.ItemTemplate>
         </ListBox>
+        <TextBlock x:Name="textBlock_race" HorizontalAlignment="Left" Margin="26,83,0,0" TextWrapping="Wrap" Text="Race" VerticalAlignment="Top" Height="22" Width="75" IsHitTestVisible="False"/>
+        <TextBlock x:Name="textBlock_nature" HorizontalAlignment="Left" Margin="26,123,0,0" TextWrapping="Wrap" Text="Class" VerticalAlignment="Top" Height="22" Width="69" IsHitTestVisible="False"/>
+        <TextBlock x:Name="textBlock_alignment" HorizontalAlignment="Left" Margin="26,162,0,0" TextWrapping="Wrap" Text="Alignment" VerticalAlignment="Top" Height="22" Width="67" IsHitTestVisible="False"/>
 
     </Grid>
 </Page>

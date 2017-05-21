@@ -5,8 +5,11 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:database"
       mc:Ignorable="d" 
-      d:DesignHeight="344.712" d:DesignWidth="432.692"
+      d:DesignHeight="363.5" d:DesignWidth="785.214"
       Title="LoginItselfPage">
+    <Page.Background>
+        <ImageBrush ImageSource="Images\dicered.png" Stretch="UniformToFill"/>
+    </Page.Background>
     <Page.Resources>
         <Style x:Key="placeHolder" TargetType="{x:Type TextBox}" BasedOn="{StaticResource {x:Type TextBox}}">
             <Setter Property="Template">
@@ -41,11 +44,23 @@ Panel.ZIndex="2" />
 
     <Grid Unloaded="Grid_Unloaded">
         <TextBox x:Name="login_textBox" Style="{StaticResource placeHolder}" Tag="Login" HorizontalAlignment="Left" Height="23" Margin="44,54,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
-        <TextBox x:Name="password_textBox" HorizontalAlignment="Left" Height="23" Margin="44,105,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
-        <Button x:Name="button" Content="Login" HorizontalAlignment="Left" Margin="44,191,0,0" VerticalAlignment="Top" Width="75" Click="button_Click"/>
-        <Button x:Name="BackToLogin_button" Content="Back" HorizontalAlignment="Left" Margin="44,216,0,0" VerticalAlignment="Top" Width="75" Click="BackToLogin_button_Click"/>
-        <Label x:Name="error_label" Content="" HorizontalAlignment="Left" Margin="44,146,0,0" VerticalAlignment="Top" Width="256"/>
-        <Button x:Name="newplayer_button" Content="Create new account" HorizontalAlignment="Left" Margin="152,191,0,0" VerticalAlignment="Top" Width="148" RenderTransformOrigin="0.371,1.195" Click="newplayer_button_Click"/>
+        <Button x:Name="button" Content="Login" HorizontalAlignment="Left" Margin="44,191,0,0" VerticalAlignment="Top" Width="75" Click="button_Click" FontSize="14" FontWeight="Bold" BorderThickness="0">
+            <Button.Background>
+                <ImageBrush/>
+            </Button.Background>
+        </Button>
+        <Button x:Name="BackToLogin_button" Content="Back" HorizontalAlignment="Left" Margin="44,231,0,0" VerticalAlignment="Top" Width="75" Click="BackToLogin_button_Click" FontSize="14" FontWeight="Bold" BorderThickness="0">
+            <Button.Background>
+                <ImageBrush/>
+            </Button.Background>
+        </Button>
+        <Label x:Name="error_label" Content="" HorizontalAlignment="Left" Margin="44,146,0,0" VerticalAlignment="Top" Width="326" FontWeight="Bold" FontSize="14"/>
+        <Button x:Name="newplayer_button" Content="Create new account" HorizontalAlignment="Left" Margin="152,191,0,0" VerticalAlignment="Top" Width="148" RenderTransformOrigin="0.371,1.195" Click="newplayer_button_Click" FontSize="14" FontWeight="Bold" BorderThickness="0">
+            <Button.Background>
+                <ImageBrush/>
+            </Button.Background>
+        </Button>
+        <PasswordBox x:Name="passwordBox" HorizontalAlignment="Left" Margin="44,102,0,0" VerticalAlignment="Top" Width="120" Height="23"/>
 
     </Grid>
 </Page>

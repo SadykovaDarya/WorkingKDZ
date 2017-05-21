@@ -5,15 +5,17 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:database"
       mc:Ignorable="d" 
-      d:DesignHeight="318.5" d:DesignWidth="768.714"
+      d:DesignHeight="363.5" d:DesignWidth="785.214"
       Title="LoginPage">
+    <Page.Background>
+        <ImageBrush ImageSource="Images\dicered.png" Stretch="UniformToFill"/>
+    </Page.Background>
+    <Grid>
 
-    <Grid Unloaded="Grid_Unloaded">
-        <Button x:Name="login_button" Content="Login" HorizontalAlignment="Left" Margin="72,137,0,0" VerticalAlignment="Top" Width="135" Height="46" Click="login_button_Click"/>
-        <Button x:Name="nologin_button" Content="Continue" HorizontalAlignment="Right" Margin="0,137,134,0" VerticalAlignment="Top" Width="136" Height="46" Click="nologin_button_Click"/>
-        <Button x:Name="newaccount_button" Content="Create an account" HorizontalAlignment="Center" Margin="290,142,363,0" VerticalAlignment="Top" Width="116" Height="46" Click="newaccount_button_Click"/>
-        <Button x:Name="Rules_button" Content="Rules" HorizontalAlignment="Center" Margin="290,208,362,0" VerticalAlignment="Top" Width="117" Height="29"/>
-        <TextBlock x:Name="textBlock" HorizontalAlignment="Center" Margin="68,31,130,0" TextWrapping="Wrap" Text="To get access to your characters' database you have to log in or create an account.By choosing to continue without logging in you are aware of the fact that none of the data you entered are going to be remembered after closing a program." VerticalAlignment="Top"/>
+        <Button x:Name="login_button" Content="Login" HorizontalAlignment="Left" Margin="72,125,0,0" VerticalAlignment="Top" Width="119" Height="31" Click="login_button_Click" FontSize="14" Background="{x:Null}" BorderThickness="0" FontWeight="Bold"/>
+        <Button x:Name="nologin_button" Content="Continue" HorizontalAlignment="Right" Margin="0,329,92,0" VerticalAlignment="Top" Width="96" Height="25" Click="nologin_button_Click" FontSize="14" Background="{x:Null}" Foreground="Black" BorderThickness="0" FontWeight="Bold"/>
+        <Button x:Name="newaccount_button" Content="Create an account" HorizontalAlignment="Center" Margin="72,177,559,0" VerticalAlignment="Top" Width="154" Height="32" Click="newaccount_button_Click" FontSize="14" Background="{x:Null}" BorderThickness="0" FontWeight="Bold"/>
+        <TextBlock x:Name="textBlock" HorizontalAlignment="Center" Margin="72,31,62,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="75" FontSize="20" Width="651" FontFamily="Gill Sans MT Condensed" Foreground="White"><Run Text="In order to create a base of your own characters you have to log in or create a new account. By pressing the continue button you choose to continue without authorization and you will see only the list of iconic DnD "/><Run Text="characters"/><Run Text="."/></TextBlock>
 
     </Grid>
 </Page>

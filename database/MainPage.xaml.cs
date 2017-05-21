@@ -26,15 +26,17 @@ namespace database
             Data.characters.Clear();
             characters.Items.Clear();
             
-                try
-                {
+          
                     foreach (var item in Data.players[number].Characters)
                     {
                         Data.characters.Add(item);
                     }
-                    characters.ItemsSource = Data.characters;
+
+                foreach (var item in Data.characters)
+                {
+                    characters.Items.Add(item);
                 }
-                catch { characters.ItemsSource = null; }
+              
             }
 
         public MainPage(string s)
@@ -45,6 +47,7 @@ namespace database
             delete.Visibility = Visibility.Hidden;
             Add.Visibility = Visibility.Hidden;
             change.Visibility = Visibility.Hidden;
+            
 
         }
 

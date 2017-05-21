@@ -50,9 +50,12 @@ namespace database
                 Data.characters.Add(hero);
                 Data.players[Data.number].Characters.Add(hero);
                 nameBox.Text = "";
-                raceBox.Text = "";
                 natureBox.Text = "";
+                raceBox.Text = "";
                 alignmentBox.Text = "";
+                textBlock_race.Visibility= Visibility.Visible;
+                textBlock_nature.Visibility = Visibility.Visible;
+                textBlock_alignment.Visibility = Visibility.Visible;
                 foreach (var item in stats)
                 {
                     item.Text = "";
@@ -73,5 +76,19 @@ namespace database
             Data.Save();
         }
 
+        private void raceBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            textBlock_race.Visibility = Visibility.Hidden;
+        }
+
+        private void natureBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            textBlock_nature.Visibility = Visibility.Hidden;
+        }
+
+        private void alignmentBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            textBlock_alignment.Visibility = Visibility.Hidden;
+        }
     }
 }

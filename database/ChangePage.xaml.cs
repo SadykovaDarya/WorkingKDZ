@@ -77,5 +77,20 @@ namespace database
         {
             Data.Save();
         }
+
+        private void raceBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            textBlock_race.Visibility = Visibility.Hidden;
+        }
+
+        private void natureBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            textBlock_nature.Visibility = Visibility.Hidden;
+        }
+
+        private void alignmentBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            textBlock_alignment.Visibility = Visibility.Hidden;
+        }
     }
 }

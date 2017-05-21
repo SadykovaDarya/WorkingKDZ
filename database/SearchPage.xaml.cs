@@ -40,11 +40,13 @@ namespace database
                     SearchResults_listBox.Items.Add(hero);
                     }
                 }
-            
             nameBox.Text = "";
             raceBox.Text = "";
             natureBox.Text = "";
             alignmentBox.Text = "";
+            textBlock_race.Visibility = Visibility.Visible;
+            textBlock_nature.Visibility = Visibility.Visible;
+            textBlock_alignment.Visibility = Visibility.Visible;
         }
 
         private void BackToMain_button_Click(object sender, RoutedEventArgs e)
@@ -58,6 +60,21 @@ namespace database
         private void Grid_Unloaded(object sender, RoutedEventArgs e)
         {
             Data.Save();
+        }
+
+        private void raceBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            textBlock_race.Visibility = Visibility.Hidden;
+        }
+
+        private void natureBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            textBlock_nature.Visibility = Visibility.Hidden;
+        }
+
+        private void alignmentBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            textBlock_alignment.Visibility = Visibility.Hidden;
         }
     }
 }

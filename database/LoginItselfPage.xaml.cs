@@ -40,7 +40,7 @@ namespace database
         private void button_Click(object sender, RoutedEventArgs e)
         {
             MD5 md5 = MD5.Create();
-            byte[] hash = md5.ComputeHash(Encoding.ASCII.GetBytes(password_textBox.Text));
+            byte[] hash = md5.ComputeHash(Encoding.ASCII.GetBytes(passwordBox.Password));
             string h = Convert.ToBase64String(hash);
 
 
@@ -50,7 +50,7 @@ namespace database
             
                 if (login_textBox.Text == Data.players[i].Login && h == Data.players[i].Password)
                 {
-                    Logger.Instance.Log("User has authorised.");
+                    Logger.Instance.Log("User has authorized.");
                     Data.number = i;
                     NavigationService nav;
                     MainPage CP = new MainPage(Data.number);
@@ -59,18 +59,18 @@ namespace database
                     goto shit;
                 }
             }
-            { error_label.Content = "Error occured! Wrong password or login."; login_textBox.Text = ""; password_textBox.Text = ""; Logger.Instance.Log("Failed attempt to log in."); }
+            { error_label.Content = "Error occured! Wrong password or login."; login_textBox.Text = ""; passwordBox.Password = ""; Logger.Instance.Log("Failed attempt to log in."); }
         shit:;
         }
 
         private void newplayer_button_Click(object sender, RoutedEventArgs e)
         {
             Data.mark = false;
-            if (login_textBox.Text != "" && password_textBox.Text != "")
+            if (login_textBox.Text != "" && passwordBox.Password != "")
             {
                 Logger.Instance.Log("New account was created.");
                 MD5 md5 = MD5.Create();
-                byte[] hash = md5.ComputeHash(Encoding.ASCII.GetBytes(password_textBox.Text));
+                byte[] hash = md5.ComputeHash(Encoding.ASCII.GetBytes(passwordBox.Password));
                 string h = Convert.ToBase64String(hash);
                 Data.players.Add(new Player(login_textBox.Text, h));
                 NavigationService nav;

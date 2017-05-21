@@ -5,18 +5,37 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:database"
       mc:Ignorable="d" 
-      d:DesignHeight="412.778" d:DesignWidth="827.004"
+      d:DesignHeight="363.5" d:DesignWidth="785.214"
       Title="MainPage">
+    <Page.Background>
+        <ImageBrush ImageSource="Images\dicered.png" Stretch="UniformToFill"/>
+    </Page.Background>
 
     <Grid Unloaded="Grid_Unloaded">
         <Grid.RowDefinitions>
             <RowDefinition Height="7*"/>
             <RowDefinition Height="3*"/>
         </Grid.RowDefinitions>
-        <Button x:Name="Add" Content="Create" HorizontalAlignment="Left" Margin="28,191,0,0" VerticalAlignment="Top" Width="75" Click="Add_Click" Grid.RowSpan="2"/>
-        <Button x:Name="delete" Content="Delete" HorizontalAlignment="Left" Margin="138,238,0,0" VerticalAlignment="Top" Width="75" RenderTransformOrigin="0.011,0.754" Click="delete_Click"/>
-        <Button x:Name="change" Content="Change" HorizontalAlignment="Left" Margin="28,238,0,0" VerticalAlignment="Top" Width="75" Click="change_Click"/>
-        <Button x:Name="search" Content="Search" HorizontalAlignment="Left" Margin="138,191,0,0" VerticalAlignment="Top" Width="75" Click="search_Click" Grid.RowSpan="2" HorizontalContentAlignment="Stretch"/>
+        <Button x:Name="Add" Content="Create" HorizontalAlignment="Left" Margin="28,191,0,0" VerticalAlignment="Top" Width="75" Click="Add_Click" Grid.RowSpan="2" FontSize="14" FontWeight="Bold" BorderThickness="0">
+            <Button.Background>
+                <ImageBrush/>
+            </Button.Background>
+        </Button>
+        <Button x:Name="delete" Content="Delete" HorizontalAlignment="Left" Margin="138,239,0,0" VerticalAlignment="Top" Width="75" RenderTransformOrigin="0.011,0.754" Click="delete_Click" BorderThickness="0" FontSize="14" FontWeight="Bold" Grid.RowSpan="2">
+            <Button.Background>
+                <ImageBrush/>
+            </Button.Background>
+        </Button>
+        <Button x:Name="change" Content="Change" HorizontalAlignment="Left" Margin="28,239,0,0" VerticalAlignment="Top" Width="75" Click="change_Click" BorderThickness="0" FontSize="14" FontWeight="Bold" Grid.RowSpan="2">
+            <Button.Background>
+                <ImageBrush/>
+            </Button.Background>
+        </Button>
+        <Button x:Name="search" Content="Search" HorizontalAlignment="Left" Margin="138,191,0,0" VerticalAlignment="Top" Width="75" Click="search_Click" Grid.RowSpan="2" BorderThickness="0" FontSize="14" FontWeight="Bold">
+            <Button.Background>
+                <ImageBrush/>
+            </Button.Background>
+        </Button>
         <ListBox x:Name="characters" HorizontalAlignment="Left" Height="134" Margin="28,29,0,0" VerticalAlignment="Top" Width="600">
             <ListBox.ItemTemplate >
                 <DataTemplate>
@@ -49,7 +68,11 @@
         </ListBox>
 
 
-        <Button x:Name="BackToWelcome_button" Content="Back" HorizontalAlignment="Left" Margin="28,10,0,0" VerticalAlignment="Top" Width="75" Click="BackToWelcome_button_Click" Grid.Row="1"/>
+        <Button x:Name="BackToWelcome_button" Content="Back" HorizontalAlignment="Left" Margin="28,30,0,0" VerticalAlignment="Top" Width="75" Click="BackToWelcome_button_Click" Grid.Row="1" FontSize="14" FontWeight="Bold" BorderThickness="0">
+            <Button.Background>
+                <ImageBrush/>
+            </Button.Background>
+        </Button>
 
     </Grid>
 </Page>
