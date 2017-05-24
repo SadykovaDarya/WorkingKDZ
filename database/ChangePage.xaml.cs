@@ -24,10 +24,12 @@ namespace database
         public ChangePage(Characters item, int index, List<Player> players)
         {
             InitializeComponent();
+            
             raceBox.ItemsSource = Data.race;
             natureBox.ItemsSource = Data.nature;
             alignmentBox.ItemsSource = Data.alignment;
 
+            label_player.Content = "You are logged in as: " + Data.players[Data.number].Login;
             nameBox.Text = Data.characters[index].Name;
             raceBox.Text = Data.characters[index].Race;
             natureBox.Text = Data.characters[index].Nature;

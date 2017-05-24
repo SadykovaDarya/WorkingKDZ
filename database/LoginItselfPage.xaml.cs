@@ -85,5 +85,37 @@ namespace database
         {
             Data.Save();
         }
+
+        private void button_MouseEnter(object sender, MouseEventArgs e)
+        {
+            button.Content = "Go!";
+            button.FontSize = 16;
+        }
+
+        private void button_MouseLeave(object sender, MouseEventArgs e)
+        {
+            button.Content = "Login";
+            button.FontSize = 14;
+        }
+
+        private void BackToLogin_button_MouseEnter(object sender, MouseEventArgs e)
+        {
+            BackToLogin_button.FontSize = 16;
+        }
+
+        private void BackToLogin_button_MouseLeave(object sender, MouseEventArgs e)
+        {
+            BackToLogin_button.FontSize = 14;
+        }
+
+        private void newplayer_button_MouseEnter(object sender, MouseEventArgs e)
+        {
+            newplayer_button.FontSize = 16;
+        }
+
+        private void newplayer_button_MouseLeave(object sender, MouseEventArgs e)
+        {
+            newplayer_button.FontSize = 14;
+        }
     }
 }

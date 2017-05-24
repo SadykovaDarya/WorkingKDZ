@@ -26,6 +26,7 @@ namespace database
             raceBox.ItemsSource = Data.race;
             natureBox.ItemsSource = Data.nature;
             alignmentBox.ItemsSource = Data.alignment;
+            label_player.Content = "You are logged in as: " + Data.players[Data.number].Login;
         }
 
         private void Add_Click(object sender, RoutedEventArgs e)

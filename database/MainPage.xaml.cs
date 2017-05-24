@@ -25,9 +25,10 @@ namespace database
             InitializeComponent();
             Data.characters.Clear();
             characters.Items.Clear();
-            
-          
-                    foreach (var item in Data.players[number].Characters)
+            label_player.Content = "You are logged in as: "+Data.players[number].Login;
+
+
+            foreach (var item in Data.players[number].Characters)
                     {
                         Data.characters.Add(item);
                     }
@@ -47,7 +48,6 @@ namespace database
             delete.Visibility = Visibility.Hidden;
             Add.Visibility = Visibility.Hidden;
             change.Visibility = Visibility.Hidden;
-            
 
         }
 

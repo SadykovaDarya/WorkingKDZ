@@ -47,7 +47,7 @@ Panel.ZIndex="2" />
         <ComboBox x:Name="raceBox" HorizontalAlignment="Left" Margin="21,80,0,0" VerticalAlignment="Top" Width="120" SelectionChanged="raceBox_SelectionChanged"/>
         <ComboBox x:Name="natureBox" HorizontalAlignment="Left" Margin="21,120,0,0" VerticalAlignment="Top" Width="120" SelectionChanged="natureBox_SelectionChanged"/>
         <ComboBox x:Name="alignmentBox" HorizontalAlignment="Left" Margin="21,159,0,0" VerticalAlignment="Top" Width="120" SelectionChanged="alignmentBox_SelectionChanged"/>
-        <Button x:Name="button_Find" Content="Find" HorizontalAlignment="Left" Margin="21,197,0,0" VerticalAlignment="Top" Width="75" Click="button_Find_Click" BorderThickness="0" FontSize="14" FontWeight="Bold">
+        <Button x:Name="button_Find" Content="Find" HorizontalAlignment="Left" Margin="21,197,0,0" VerticalAlignment="Top" Width="75" Click="button_Find_Click" BorderThickness="0" FontSize="14" FontWeight="Bold" >
             <Button.Background>
                 <ImageBrush/>
             </Button.Background>
@@ -58,7 +58,7 @@ Panel.ZIndex="2" />
                 <ImageBrush/>
             </Button.Background>
         </Button>
-        <ListBox x:Name="SearchResults_listBox" HorizontalAlignment="Left" Height="124" Margin="180,41,0,0" VerticalAlignment="Top" Width="600" Visibility="Hidden">
+        <ListBox x:Name="SearchResults_listBox" HorizontalAlignment="Left" Height="124" Margin="180,67  ,0,0" VerticalAlignment="Top" Width="600" Visibility="Hidden">
             <ListBox.ItemTemplate>
                 <DataTemplate>
                     <Grid>
@@ -91,6 +91,17 @@ Panel.ZIndex="2" />
         <TextBlock x:Name="textBlock_race" HorizontalAlignment="Left" Margin="26,83,0,0" TextWrapping="Wrap" Text="Race" VerticalAlignment="Top" Height="22" Width="75" IsHitTestVisible="False"/>
         <TextBlock x:Name="textBlock_nature" HorizontalAlignment="Left" Margin="26,123,0,0" TextWrapping="Wrap" Text="Class" VerticalAlignment="Top" Height="22" Width="69" IsHitTestVisible="False"/>
         <TextBlock x:Name="textBlock_alignment" HorizontalAlignment="Left" Margin="26,162,0,0" TextWrapping="Wrap" Text="Alignment" VerticalAlignment="Top" Height="22" Width="67" IsHitTestVisible="False"/>
+        <Label x:Name="label_Copy" Content="Name" HorizontalAlignment="Left" Margin="180,41,0,0" VerticalAlignment="Top" Visibility="Hidden"/>
+        <Label x:Name="label_Copy1" Content="Race" HorizontalAlignment="Left" Margin="260,41,0,0" VerticalAlignment="Top" Visibility="Hidden"/>
+        <Label x:Name="label_Copy2" Content="Class" HorizontalAlignment="Left" Margin="340,41,0,0" VerticalAlignment="Top" Visibility="Hidden"/>
+        <Label x:Name="label_Copy3" Content="Alignment" HorizontalAlignment="Left" Margin="420,41,0,0" VerticalAlignment="Top" Visibility="Hidden"/>
+        <Label x:Name="label_Copy4" Content="Str" HorizontalAlignment="Left" Margin="520,41,0,0" VerticalAlignment="Top" RenderTransformOrigin="1.583,0.5" Visibility="Hidden"/>
+        <Label x:Name="label_Copy5" Content="Con" HorizontalAlignment="Left" Margin="560,41,0,0" VerticalAlignment="Top" Visibility="Hidden"/>
+        <Label x:Name="label_Copy6" Content="Dex" HorizontalAlignment="Left" Margin="600,41,0,0" VerticalAlignment="Top" Visibility="Hidden"/>
+        <Label x:Name="label_Copy7" Content="Int" HorizontalAlignment="Left" Margin="640,41,0,0" VerticalAlignment="Top" Visibility="Hidden"/>
+        <Label x:Name="label_Copy8" Content="Wis" HorizontalAlignment="Left" Margin="680,41,0,0" VerticalAlignment="Top" Visibility="Hidden"/>
+        <Label x:Name="label_Copy9" Content="Char" HorizontalAlignment="Left" Margin="720,41,0,0" VerticalAlignment="Top" Visibility="Hidden"/>
+        <Label x:Name="label_player" Content="" HorizontalAlignment="Left" Margin="28,328,0,0" VerticalAlignment="Top" Width="197" Visibility="Hidden"/>
 
     </Grid>
 </Page>

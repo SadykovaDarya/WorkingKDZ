@@ -58,5 +58,37 @@ namespace database
             nav = NavigationService.GetNavigationService(this);
             nav.Navigate(CP);
         }
+
+        private void login_button_MouseEnter(object sender, MouseEventArgs e)
+        {
+            
+            login_button.FontSize = 17;
+        }
+
+        private void login_button_MouseLeave(object sender, MouseEventArgs e)
+        {
+            
+            login_button.FontSize = 14;
+        }
+
+        private void newaccount_button_MouseEnter(object sender, MouseEventArgs e)
+        {
+            newaccount_button.FontSize = 17;
+        }
+
+        private void newaccount_button_MouseLeave(object sender, MouseEventArgs e)
+        {
+            newaccount_button.FontSize = 14;
+        }
+
+        private void nologin_button_MouseEnter(object sender, MouseEventArgs e)
+        {
+            nologin_button.FontSize = 17;
+        }
+
+        private void nologin_button_MouseLeave(object sender, MouseEventArgs e)
+        {
+            nologin_button.FontSize = 14;
+        }
     }
 }

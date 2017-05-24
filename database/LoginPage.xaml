@@ -12,10 +12,10 @@
     </Page.Background>
     <Grid>
 
-        <Button x:Name="login_button" Content="Login" HorizontalAlignment="Left" Margin="72,125,0,0" VerticalAlignment="Top" Width="119" Height="31" Click="login_button_Click" FontSize="14" Background="{x:Null}" BorderThickness="0" FontWeight="Bold"/>
-        <Button x:Name="nologin_button" Content="Continue" HorizontalAlignment="Right" Margin="0,329,92,0" VerticalAlignment="Top" Width="96" Height="25" Click="nologin_button_Click" FontSize="14" Background="{x:Null}" Foreground="Black" BorderThickness="0" FontWeight="Bold"/>
-        <Button x:Name="newaccount_button" Content="Create an account" HorizontalAlignment="Center" Margin="72,177,559,0" VerticalAlignment="Top" Width="154" Height="32" Click="newaccount_button_Click" FontSize="14" Background="{x:Null}" BorderThickness="0" FontWeight="Bold"/>
-        <TextBlock x:Name="textBlock" HorizontalAlignment="Center" Margin="72,31,62,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="75" FontSize="20" Width="651" FontFamily="Gill Sans MT Condensed" Foreground="White"><Run Text="In order to create a base of your own characters you have to log in or create a new account. By pressing the continue button you choose to continue without authorization and you will see only the list of iconic DnD "/><Run Text="characters"/><Run Text="."/></TextBlock>
+        <Button x:Name="login_button" Content="Login" HorizontalAlignment="Left" Margin="72,125,0,0" VerticalAlignment="Top" Width="119" Height="31" Click="login_button_Click" FontSize="14" Background="{x:Null}" BorderThickness="0" FontWeight="Bold" MouseEnter="login_button_MouseEnter" MouseLeave="login_button_MouseLeave" Foreground="Black"/>
+        <Button x:Name="nologin_button" Content="Continue" HorizontalAlignment="Right" Margin="0,329,92,0" VerticalAlignment="Top" Width="96" Height="25" Click="nologin_button_Click" FontSize="14" Background="{x:Null}" Foreground="Black" BorderThickness="0" FontWeight="Bold" MouseEnter="nologin_button_MouseEnter" MouseLeave="nologin_button_MouseLeave"/>
+        <Button x:Name="newaccount_button" Content="Create an account" HorizontalAlignment="Center" Margin="72,177,527,0" VerticalAlignment="Top" Width="186" Height="32" Click="newaccount_button_Click" FontSize="14" Background="{x:Null}" BorderThickness="0" FontWeight="Bold" MouseEnter="newaccount_button_MouseEnter" MouseLeave="newaccount_button_MouseLeave"/>
+        <TextBlock x:Name="textBlock" HorizontalAlignment="Center" Margin="72,31,62,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="75" FontSize="20" Width="651" FontFamily="Gill Sans MT Condensed" Foreground="White"><Run Text="Welcome! In order to create a base of your own characters you have to log in or create a new account. By pressing the continue button you choose to continue without authorization and you will see only the list of iconic DnD "/><Run Text="characters"/><Run Text="."/></TextBlock>
 
     </Grid>
 </Page>

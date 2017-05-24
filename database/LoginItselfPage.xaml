@@ -10,57 +10,29 @@
     <Page.Background>
         <ImageBrush ImageSource="Images\dicered.png" Stretch="UniformToFill"/>
     </Page.Background>
-    <Page.Resources>
-        <Style x:Key="placeHolder" TargetType="{x:Type TextBox}" BasedOn="{StaticResource {x:Type TextBox}}">
-            <Setter Property="Template">
-                <Setter.Value>
-                    <ControlTemplate TargetType="{x:Type TextBox}">
-                        <Grid>
-                            <TextBox Text="{Binding Path=Text, 
-RelativeSource={RelativeSource TemplatedParent}, 
-Mode=TwoWay, 
-UpdateSourceTrigger=PropertyChanged}" 
-x:Name="textSource" 
-Background="Transparent" 
-Panel.ZIndex="2" />
-                            <TextBox Text="{TemplateBinding Tag}" Background="{TemplateBinding Background}" Panel.ZIndex="1">
-                                <TextBox.Style>
-                                    <Style TargetType="{x:Type TextBox}">
-                                        <Setter Property="Foreground" Value="Transparent"/>
-                                        <Style.Triggers>
-                                            <DataTrigger Binding="{Binding Path=Text, Source={x:Reference textSource}}" Value="">
-                                                <Setter Property="Foreground" Value="LightGray"/>
-                                            </DataTrigger>
-                                        </Style.Triggers>
-                                    </Style>
-                                </TextBox.Style>
-                            </TextBox>
-                        </Grid>
-                    </ControlTemplate>
-                </Setter.Value>
-            </Setter>
-        </Style>
-    </Page.Resources>
+   
 
     <Grid Unloaded="Grid_Unloaded">
-        <TextBox x:Name="login_textBox" Style="{StaticResource placeHolder}" Tag="Login" HorizontalAlignment="Left" Height="23" Margin="44,54,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
-        <Button x:Name="button" Content="Login" HorizontalAlignment="Left" Margin="44,191,0,0" VerticalAlignment="Top" Width="75" Click="button_Click" FontSize="14" FontWeight="Bold" BorderThickness="0">
+        <TextBox x:Name="login_textBox"  HorizontalAlignment="Left" Height="23" Margin="44,54,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
+        <Button x:Name="button" Content="Login" HorizontalAlignment="Left" Margin="44,191,0,0" VerticalAlignment="Top" Width="75" Click="button_Click" FontSize="14" FontWeight="Bold" BorderThickness="0" MouseEnter="button_MouseEnter" MouseLeave="button_MouseLeave">
             <Button.Background>
                 <ImageBrush/>
             </Button.Background>
         </Button>
-        <Button x:Name="BackToLogin_button" Content="Back" HorizontalAlignment="Left" Margin="44,231,0,0" VerticalAlignment="Top" Width="75" Click="BackToLogin_button_Click" FontSize="14" FontWeight="Bold" BorderThickness="0">
+        <Button x:Name="BackToLogin_button" Content="Back" HorizontalAlignment="Left" Margin="44,231,0,0" VerticalAlignment="Top" Width="75" Click="BackToLogin_button_Click" FontSize="14" FontWeight="Bold" BorderThickness="0" MouseEnter="BackToLogin_button_MouseEnter" MouseLeave="BackToLogin_button_MouseLeave">
             <Button.Background>
                 <ImageBrush/>
             </Button.Background>
         </Button>
         <Label x:Name="error_label" Content="" HorizontalAlignment="Left" Margin="44,146,0,0" VerticalAlignment="Top" Width="326" FontWeight="Bold" FontSize="14"/>
-        <Button x:Name="newplayer_button" Content="Create new account" HorizontalAlignment="Left" Margin="152,191,0,0" VerticalAlignment="Top" Width="148" RenderTransformOrigin="0.371,1.195" Click="newplayer_button_Click" FontSize="14" FontWeight="Bold" BorderThickness="0">
+        <Button x:Name="newplayer_button" Content="Create new account" HorizontalAlignment="Left" Margin="152,191,0,0" VerticalAlignment="Top" Width="189" RenderTransformOrigin="0.371,1.195" Click="newplayer_button_Click" FontSize="14" FontWeight="Bold" BorderThickness="0" MouseEnter="newplayer_button_MouseEnter" MouseLeave="newplayer_button_MouseLeave">
             <Button.Background>
                 <ImageBrush/>
             </Button.Background>
         </Button>
         <PasswordBox x:Name="passwordBox" HorizontalAlignment="Left" Margin="44,102,0,0" VerticalAlignment="Top" Width="120" Height="23"/>
+        <Label x:Name="label" Content="Login:" HorizontalAlignment="Left" Margin="44,23,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="label1" Content="Password:" HorizontalAlignment="Left" Margin="44,76,0,0" VerticalAlignment="Top"/>
 
     </Grid>
 </Page>

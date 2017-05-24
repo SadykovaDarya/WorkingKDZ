@@ -67,6 +67,7 @@ Panel.ZIndex="2" />
         <TextBlock x:Name="textBlock_race" HorizontalAlignment="Left" TextWrapping="Wrap" Text="Race" VerticalAlignment="Top" Margin="34,78,0,0" Height="22" Width="75" IsHitTestVisible="False"/>
         <TextBlock x:Name="textBlock_alignment" HorizontalAlignment="Left" Margin="33,164,0,0" TextWrapping="Wrap" Text="Alignment" VerticalAlignment="Top" Height="22" Width="61" IsHitTestVisible="False"/>
         <TextBlock x:Name="textBlock_nature" HorizontalAlignment="Left" Margin="34,124,0,0" TextWrapping="Wrap" Text="Class" VerticalAlignment="Top"  Height="22" Width="56" IsHitTestVisible="False"/>
+        <Label x:Name="label_player" Content="" HorizontalAlignment="Left" Margin="28,328,0,0" VerticalAlignment="Top" Width="197"/>
 
     </Grid>
 </Page>
