@@ -81,6 +81,12 @@ namespace database
             else { error_label.Content = "Error occured! All fields must be filled."; Logger.Instance.Log("Failed attempt to crate new account."); }
         }
 
+        public LoginItselfPage(string s)
+        {
+            InitializeComponent();
+            button.Visibility = Visibility.Hidden;
+
+        }
         private void Grid_Unloaded(object sender, RoutedEventArgs e)
         {
             Data.Save();

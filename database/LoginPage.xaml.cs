@@ -53,8 +53,9 @@ namespace database
 
         private void newaccount_button_Click(object sender, RoutedEventArgs e)
         {
+            string s = null;
             NavigationService nav;
-            LoginItselfPage CP = new LoginItselfPage();
+            LoginItselfPage CP = new LoginItselfPage(s);
             nav = NavigationService.GetNavigationService(this);
             nav.Navigate(CP);
         }
